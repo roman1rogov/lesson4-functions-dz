@@ -1,15 +1,15 @@
+right = 0
+wrong = 0
 while True:
     def question_data(question, data):
 
         ansver = input(question)
+
         if ansver == data:
-
             print('верно')
+
         else:
-
             print('не верно')
-
-
 
     question_data('Введите год рождения пикассо: ', '1881',)
     question_data('Введите год рождения Репина: ', '1844',)

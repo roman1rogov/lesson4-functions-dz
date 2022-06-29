@@ -33,20 +33,32 @@
 
 Для реализации основного меню можно использовать пример ниже или написать свой
 """
+my_account = 0
+checklist = []
 
 while True:
     print('1. пополнение счета')
     print('2. покупка')
     print('3. история покупок')
     print('4. выход')
+    print(f'Ваш счет {my_account}')
 
     choice = input('Выберите пункт меню')
     if choice == '1':
-        pass
+        sum = int(input('Введите сумму'))
+        my_account += sum
+
     elif choice == '2':
-        pass
+        sum = int(input('Введите сумму покупки'))
+        if sum > my_account:
+            print('На счету недостаточно средств')
+        else:
+            my_account -= sum
+            name = input('Введите название покупки')
+            checklist.append((name, sum, my_account))
+
     elif choice == '3':
-        pass
+        print('История покупок: ', checklist)
     elif choice == '4':
         break
     else:
